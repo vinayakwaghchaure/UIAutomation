@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Orange HRM Demo Test Automation test suite">
+	<listeners>
+		<listener
+			class-name="com.yesbank.qa.ExtentReportListener.ExtentReporterNG" />
+	</listeners>
+
+	<test name="TC_0001_AddUser">
+		<classes>
+			<class name="com.yesbank.qa.testscases.LoginPageTest"></class>
+			<class name="com.yesbank.qa.testscases.UserManagementTest"></class>
+		</classes>
+	</test> <!-- Test -->
+</suite> <!-- Suite -->
