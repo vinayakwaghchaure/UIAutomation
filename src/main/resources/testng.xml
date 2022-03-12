@@ -6,10 +6,9 @@
 			class-name="com.yesbank.qa.ExtentReportListener.ExtentReporterNG" />
 	</listeners>
 
-	<test name="TC_0001_AddUser">
+	<test name="Login_Testcases">
 		<classes>
 			<class name="com.yesbank.qa.testscases.LoginPageTest"></class>
-			<class name="com.yesbank.qa.testscases.UserManagementTest"></class>
 		</classes>
 	</test> <!-- Test -->
 </suite> <!-- Suite -->

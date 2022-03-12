@@ -55,7 +55,7 @@ public class UserManagementTest extends TestBase {
 	public void validateNewUse(String EmpName,String userName,String pass,String confirmpass) throws IOException
 	{
 
-		 homePage=new HomePage(driver);
+		homePage=new HomePage(driver);
 		homePage.clickAdminTab();
 		Assert.assertTrue(homePage.verifyUsernameLabel());
 		userManagementPage=new UserManagementPage(driver);

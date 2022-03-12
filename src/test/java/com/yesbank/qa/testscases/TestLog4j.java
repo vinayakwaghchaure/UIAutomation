@@ -37,7 +37,7 @@ public class TestLog4j extends TestBase {
 	}
 
 
-	@DataProvider
+	@DataProvider 
 	public Object[][] getTestData()
 	{
 		Object data[][]=TestUtil.getTestData(seetName);
@@ -48,16 +48,12 @@ public class TestLog4j extends TestBase {
 	@Test(priority=1, dataProvider="getTestData")
 	public void validateNewUse(String EmpName,String userName,String pass,String confirmpass) throws IOException
 	{
-
 		homePage=new HomePage(driver);
 		homePage.clickAdminTab();
 		log.info("click Admin Tab");
-
 		Assert.assertTrue(homePage.verifyUsernameLabel());
 		userManagementPage=new UserManagementPage(driver);
-
 		System.out.println(EmpName +" "+userName+ " "+pass+" "+confirmpass);
-
 		userManagementPage.addUser(EmpName,userName,pass,confirmpass);
 	}
 

@@ -18,7 +18,7 @@ public class TestBase {
 	public static Properties prop;
 	public static EventFiringWebDriver eventFiringWebDriver;
 	public static WebEventListener eventListener;
-	
+
 
 	public TestBase() {
 		try {
@@ -41,18 +41,18 @@ public class TestBase {
 			System.setProperty("webdriver.chrome.driver", "D://JavaPractice/UIYesbank/Drivers/CromeDriver/chromedriver.exe");
 			driver=new ChromeDriver();
 			Reporter.log("Lounch the browser");
-			
+
 		}
 		else if(browserName.equals("firefox")){
 			System.setProperty("webdriver.gecko.driver", "");
 			driver=new FirefoxDriver();
 		}
-		
+
 		eventFiringWebDriver=new EventFiringWebDriver(driver);
 		eventListener=new WebEventListener();
 		eventFiringWebDriver.register(eventListener);
 		driver=eventFiringWebDriver;
-		
+
 		driver.manage().window().maximize();
 		driver.manage().deleteAllCookies();
 		driver.manage().timeouts().pageLoadTimeout(TestUtil.PAGE_LOAD_TIMEOUT, TimeUnit.SECONDS);

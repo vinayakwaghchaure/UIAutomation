@@ -10,13 +10,15 @@ import org.testng.Reporter;
 
 import com.yesbank.qa.base.TestBase;
 
+import io.qameta.allure.Step;
+
 public class LoginPage extends TestBase {
 
 	//PageFactory (Object repository) collection of WebElement
-	@FindBy(id="txtUsername1")
+	@FindBy(id="txtUsername")
 	WebElement username;
 
-	@FindBy(id="txtPassword1")
+	@FindBy(id="txtPassword")
 	WebElement password;
 
 	@FindBy(id="btnLogin")
@@ -28,14 +30,17 @@ public class LoginPage extends TestBase {
 	}
 
 	//Action
+	@Step("getting Login Page Title Step....")
 	public String validateLoginPageTitle() {
 		return driver.getTitle();
 	}
 
+
+	@Step("Login with username: {0} and password: {1} Step....")
 	public HomePage login(String uname,String pass) {
 
-		Reporter.log("Enter the Username" +uname);
-		Reporter.log("Enter the Password" +pass);
+		Reporter.log("Enter the Username :" +uname);
+		Reporter.log("Enter the Password :" +pass);
 
 		username.sendKeys(uname);
 		password.sendKeys(pass);
